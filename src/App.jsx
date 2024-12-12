@@ -3,17 +3,17 @@ import Coffee from "./components/presentation/Coffee";
 import Menu from "./components/layout/Menu";
 
 function App() {
-  const [coffee, setCoffee] = useState([]);
+  const [coffees, setCoffees] = useState([]);
 
   useEffect(() => {
     fetch("https://api.sampleapis.com/coffee/hot")
       .then((response) => response.json())
-      .then((v) => setCoffee((prev) => [...v]));
+      .then((v) => setCoffees((x) => [...v]));
   }, []);
 
   return (
     <Menu
-      children={coffee.map((v) => (
+      children={coffees.map((v) => (
         <Coffee {...v} />
       ))}
     />
