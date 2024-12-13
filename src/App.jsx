@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     fetch("https://api.sampleapis.com/coffee/hot")
       .then((response) => response.json())
-      .then((v) => setCoffees((x) => [...v]));
+      .then((v) => setCoffees((prev) => [...v]));
   }, []);
 
   return (
